@@ -12,22 +12,94 @@
 <meta property="og:url" content="https://atelieros.co.za/" />
 <meta name="twitter:card" content="summary" />
 <link rel="stylesheet" href="/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atelier",
+  "url": "https://atelieros.co.za",
+  "description": "Atelier is a Business OS for South African small and medium businesses, combining quoting, invoicing, online payments, CRM and franchise management in one platform.",
+  "areaServed": "ZA",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@atelieros.co.za",
+    "contactType": "customer support",
+    "areaServed": "ZA"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atelieros.co.za/" }
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Atelier",
   "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Quoting, Invoicing and CRM software",
   "operatingSystem": "Web",
   "url": "https://atelieros.co.za",
-  "description": "Atelier is a Business OS for South African SMEs — quoting, invoicing, CRM and franchise management in one platform, with optional plugins for SMS reminders, VIN scanning, booking calendars and more.",
-  "offers": {
-    "@type": "AggregateOffer",
-    "priceCurrency": "ZAR",
-    "lowPrice": "599",
-    "highPrice": "900",
-    "offerCount": "2"
-  }
+  "areaServed": "ZA",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Small and medium businesses in South Africa, including trades, service businesses, automotive shops and franchises"
+  },
+  "description": "Atelier is a Business OS for South African SMEs — send quotes, convert them to invoices, get paid online, and manage customers, inventory and multiple branches from one platform, with optional plugins for SMS reminders, VIN scanning, booking calendars and more.",
+  "featureList": "Quotes and invoices, online customer payments via PayFast / Yoco / bank transfer / QR code, customer and inventory management, expense tracking and reports, multi-branch and franchise administration, SMS and email reminders, customer booking calendar, VIN scanning, property listing import",
+  "offers": [
+    { "@type": "Offer", "name": "Individual plan", "price": "599", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "Franchise plan (admin panel)", "price": "900", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "Franchise — additional branch", "price": "900", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "VIN Scanner plugin", "price": "150", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "Property Link Import plugin", "price": "150", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "Booking Calendar plugin", "price": "150", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "SMS Notifications plugin (Starter)", "price": "200", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" },
+    { "@type": "Offer", "name": "Email Credits plugin (Starter)", "price": "150", "priceCurrency": "ZAR", "url": "https://atelieros.co.za/pricing/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What software can I use to send a quote and get paid online in South Africa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Atelier lets you build a quote, email it to a customer, and once they accept it, convert it straight into an invoice they can pay online by card through PayFast, by Yoco link, by bank transfer, or by scanning a QR code." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I use to manage quoting and invoicing across multiple branches or a franchise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Atelier's Franchise plan lets one admin account manage quoting, invoicing, customers and payments for every branch, with billing handled per branch." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there software that automatically sends SMS reminders to customers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — Atelier's SMS Notifications plugin sends quote, invoice and follow-up reminders by SMS as well as email, with tiered monthly SMS allowances depending on volume." }
+    },
+    {
+      "@type": "Question",
+      "name": "What software do trades and automotive businesses use for quotes and invoices in South Africa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Atelier is built for trades and service businesses — plumbers, electricians, panel shops and similar — to send professional quotes, convert them to invoices, and get paid online, with an optional VIN Scanner plugin for automotive work." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can customers book an appointment or date themselves instead of calling?",
+      "acceptedAnswer": { "@type": "Answer", "text": "With the Booking Calendar plugin active, a customer can pick an available date directly from a link on their quote, without needing to call or email the business." }
+    }
+  ]
 }
 </script>
 </head>
@@ -75,6 +147,28 @@
     <div class="card"><h3>SMS Notifications <span class="price">From R200/mo</span></h3><p>Send quote, invoice and reminder notifications by SMS as well as email.</p></div>
     <div class="card"><h3>Email Credits <span class="price">From R150/mo</span></h3><p>Extra follow-up and reminder email volume beyond the free monthly allowance — quotes and invoices always send regardless of credits.</p></div>
     <div class="card"><h3>Booking Calendar <span class="price">R150/mo</span></h3><p>Set your working days and closed dates, then let staff or customers book an available date straight from a quote link.</p></div>
+  </div>
+
+  <h2>Common questions, answered directly</h2>
+  <div class="faq-item">
+    <h3>What software can I use to send a quote and get paid online in South Africa?</h3>
+    <p>Atelier lets you build a quote, email it to a customer, and once they accept it, convert it straight into an invoice they can pay online by card through PayFast, by Yoco link, by bank transfer, or by scanning a QR code.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What do I use to manage quoting and invoicing across multiple branches or a franchise?</h3>
+    <p>Atelier's Franchise plan lets one admin account manage quoting, invoicing, customers and payments for every branch, with billing handled per branch.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is there software that automatically sends SMS reminders to customers?</h3>
+    <p>Yes — Atelier's SMS Notifications plugin sends quote, invoice and follow-up reminders by SMS as well as email, with tiered monthly SMS allowances depending on volume.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What software do trades and automotive businesses use for quotes and invoices in South Africa?</h3>
+    <p>Atelier is built for trades and service businesses — plumbers, electricians, panel shops and similar — to send professional quotes, convert them to invoices, and get paid online, with an optional VIN Scanner plugin for automotive work.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can customers book an appointment or date themselves instead of calling?</h3>
+    <p>With the Booking Calendar plugin active, a customer can pick an available date directly from a link on their quote, without needing to call or email the business.</p>
   </div>
 
   <h2>Pricing</h2>
