@@ -417,3 +417,58 @@ footer a:hover { color: var(--accent); }
   font-size: 0.95rem;
   color: var(--ink);
 }
+
+.how-it-works {
+  margin-top: 3rem;
+  text-align: center;
+}
+.how-it-works-grid {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.how-step {
+  flex: 1 1 200px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+.how-step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.how-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+.how-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.how-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--line);
+  font-size: 1.5rem;
+  flex: 0 0 auto;
+}
+@media (max-width: 860px) {
+  .how-it-works-grid { flex-direction: column; }
+  .how-arrow { transform: rotate(90deg); margin: -0.5rem 0; }
+}
