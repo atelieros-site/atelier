@@ -32,23 +32,31 @@
   </nav>
 </header>
 <main>
+  <p class="breadcrumb"><a href="/">Home</a> / Pricing</p>
   <h1>Pricing</h1>
   <p class="lead">Two core plans, billed monthly in South African Rand. Add plugins from the Store only when you need them.</p>
 
   <h2>Core plans</h2>
-  <div class="plans">
-    <div class="card">
-      <h3>Individual <span class="price">R599/mo</span></h3>
-      <p>One business, full access to quotes, invoices, the customer portal, customers, items, expenses and reports.</p>
-    </div>
-    <div class="card">
-      <h3>Franchise <span class="price">R900/mo</span></h3>
-      <p>An admin panel covering your franchise, plus R900/mo for each additional branch you add.</p>
-    </div>
-  </div>
+  <table class="pricing-table">
+    <thead>
+      <tr><th>Plan</th><th>Price</th><th>What's included</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Individual</td>
+        <td>R599/mo</td>
+        <td>One business, full access to quotes, invoices, the customer portal, customers, items, expenses and reports.</td>
+      </tr>
+      <tr>
+        <td>Franchise</td>
+        <td>R900/mo + R900/mo per branch</td>
+        <td>An admin panel covering your franchise, plus R900/mo for each additional branch you add.</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h2>Plugins</h2>
-  <div class="plugins">
+  <div class="cards">
     <div class="card"><h3>Low Stock Alerts <span class="price">Free</span></h3><p>Daily digest when a tracked item's stock drops to or below its threshold.</p></div>
     <div class="card"><h3>Coupon <span class="price">Free</span></h3><p>Apply a % or fixed-R discount to a quote or invoice.</p></div>
     <div class="card"><h3>VIN Scanner <span class="price">R150/mo</span></h3><p>Auto-fill a vehicle VIN onto a quote or invoice from a photo.</p></div>
@@ -60,11 +68,13 @@
     </div>
     <div class="card">
       <h3>Email Credits <span class="price">From R150/mo</span></h3>
-      <p>Every business gets 100 follow-up/reminder emails free each month. Starter R150/mo (100 more), Growth R200/mo (150 more), Pro R500/mo (200 more). Quotes and invoices always send regardless of credits.</p>
+      <p>Every business gets 50 follow-up/reminder emails free each month. Starter R150/mo (100 total), Growth R200/mo (150 total), Pro R500/mo (200 total, pooled across franchise branches). Quotes and invoices always send regardless of credits.</p>
     </div>
   </div>
 
-  <a class="cta" href="https://app.atelieros.co.za/">Get started</a>
+  <div class="cta-row">
+    <a class="cta" href="https://app.atelieros.co.za/">Get started</a>
+  </div>
 </main>
 <footer>
   <a href="/pricing/">Pricing</a>
