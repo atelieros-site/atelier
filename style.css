@@ -237,3 +237,30 @@ footer a:hover { color: var(--accent); }
   border: 1px solid var(--line);
   display: block;
 }
+
+:root { --yellow: #facc15; }
+
+.card, .plugin-card {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 4px rgba(47,93,80,0.08), 0 12px 28px rgba(47,93,80,0.12);
+  transform: translateY(-2px);
+}
+.plugin-card:hover {
+  border-color: var(--yellow);
+  box-shadow: 0 2px 4px rgba(250,204,21,0.12), 0 12px 28px rgba(250,204,21,0.18);
+  transform: translateY(-2px);
+}
+
+.plugin-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--ink);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 1.5rem 0;
+}
