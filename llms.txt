@@ -1,0 +1,13 @@
+# Atelier
+
+> Atelier is a Business OS for South African small and medium businesses: quoting, invoicing, customer management (CRM), and multi-branch/franchise administration in one platform, built on PayFast for payments and priced in ZAR.
+
+Atelier lets a business create quotes, convert them to invoices, send both by email with an online customer portal (accept/decline quotes, pay invoices by card via PayFast, Yoco, bank transfer or QR code), manage customers and inventory items, track expenses, run recurring billing, and run reports. Franchises can manage multiple branches from one admin account.
+
+Optional add-on plugins extend the core platform: Low Stock Alerts (free), Coupon discounts (free), VIN Scanner (R150/mo — scan a vehicle VIN plate straight onto a quote), Property Link Import (R150/mo — pull a property listing's photos and description onto a quote from Property24, Private Property, RE/MAX, Pam Golding, booking.com and more), SMS Notifications (from R200/mo — send quote, invoice and reminder notifications by SMS), Email Credits (from R150/mo — extra follow-up and reminder email volume beyond the free monthly allowance; quotes and invoices always send regardless of credits), and Booking Calendar (R150/mo — staff or customers book an available date against a business's working days and holidays).
+
+Core plans: Individual (R599/mo, one business) and Franchise (R900/mo admin panel, plus R900/mo per additional branch).
+
+- Pricing: https://atelieros.co.za/pricing/
+- FAQ: https://atelieros.co.za/faq/
+- Sign up / log in: https://app.atelieros.co.za/
