@@ -229,3 +229,11 @@ footer a:hover { color: var(--accent); }
 }
 .plugin-request h3 { margin-bottom: 0.4rem; }
 .plugin-request p { color: var(--muted); max-width: 55ch; margin: 0 auto 1.2rem; }
+
+.hero-image {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  display: block;
+}
