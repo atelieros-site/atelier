@@ -218,3 +218,14 @@ footer {
 }
 footer a { color: var(--muted); }
 footer a:hover { color: var(--accent); }
+
+.plugin-request {
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.plugin-request h3 { margin-bottom: 0.4rem; }
+.plugin-request p { color: var(--muted); max-width: 55ch; margin: 0 auto 1.2rem; }
