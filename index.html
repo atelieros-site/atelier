@@ -409,11 +409,14 @@
       <p class="lead">Art lives in every page of Atelier, ready the moment you need it. Ask where something is or how a screen works, and Art points you straight there — no digging through menus, no support ticket.</p>
     </div>
     <div class="art-bubble">
-      <div class="art-bubble-avatar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
-          <path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z" />
-          <path d="M19 15l.7 1.8L21.5 17.5 19.7 18.2 19 20l-.7-1.8L16.5 17.5l1.8-.7L19 15Z" />
-        </svg>
+      <div class="art-bubble-avatar-wrap">
+        <button class="art-bubble-avatar" id="artTriggerBtn" aria-label="Chat with Art" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+            <path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z" />
+            <path d="M19 15l.7 1.8L21.5 17.5 19.7 18.2 19 20l-.7-1.8L16.5 17.5l1.8-.7L19 15Z" />
+          </svg>
+        </button>
+        <span class="art-tap-badge">Try me</span>
       </div>
       <div class="art-bubble-msg">Looking for the Items page? It's under Catalog in the left menu.</div>
     </div>
@@ -458,5 +461,106 @@
   <a href="https://app.atelieros.co.za/privacy">Privacy</a>
   <span>support@atelieros.co.za</span>
 </footer>
+<div class="art-chat-overlay" id="artChatOverlay">
+  <div class="art-chat-modal">
+    <div class="art-chat-header">
+      <div class="art-chat-header-info">
+        <div class="art-chat-avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z" />
+            <path d="M19 15l.7 1.8L21.5 17.5 19.7 18.2 19 20l-.7-1.8L16.5 17.5l1.8-.7L19 15Z" />
+          </svg>
+        </div>
+        <div>
+          <div class="art-chat-title">Art</div>
+          <div class="art-chat-subtitle">Quick demo &mdash; ask a question</div>
+        </div>
+      </div>
+      <button class="art-chat-close" id="artChatClose" aria-label="Close chat" type="button">&times;</button>
+    </div>
+    <div class="art-chat-messages" id="artChatMessages">
+      <div class="art-chat-row art">
+        <div class="art-chat-bubble art">Hi, I'm Art. Ask me anything about Atelier &mdash; pricing, switching from another tool, plugins, multiple businesses, whatever's on your mind.</div>
+      </div>
+    </div>
+    <form class="art-chat-input-row" id="artChatForm">
+      <input type="text" id="artChatInput" placeholder="Type a question&hellip;" autocomplete="off" />
+      <button type="submit" class="art-chat-send">Send</button>
+    </form>
+    <div class="art-chat-footnote">This is a quick demo of asking Art. The real Art lives inside Atelier and helps you navigate your workspace.</div>
+  </div>
+</div>
+<script>
+(function () {
+  var topics = [
+    { keywords: ["xero", "switch", "competitor", "move", "moving"], answer: "No need to choose \u2014 use both! As our plugin ecosystem grows, Atelier and Xero can work really well side by side. Try Atelier free and see how it feels for your business. Got suggestions? Get in touch and tell us what you'd like to see." },
+    { keywords: ["price", "pricing", "cost", "how much"], answer: "Plans start at R599/mo for a single business, with plugins priced separately depending on what you add. Check the full breakdown on the Pricing page." },
+    { keywords: ["free", "trial", "try"], answer: "Yes \u2014 you can get started and try Atelier for your business right away. No pressure, see how it feels." },
+    { keywords: ["franchise", "branch", "multiple business", "multi-business", "multiple businesses"], answer: "Atelier handles a single business, multiple branches under one franchise, or several independent businesses from one account \u2014 whatever shape your operation takes." },
+    { keywords: ["plugin", "plugins", "add-on", "addon"], answer: "Plugins let you add exactly what your trade needs \u2014 low-stock alerts, coupons, VIN scanning, SMS and email reminders, a booking calendar, and more are on the way." },
+    { keywords: ["art", "who are you", "what are you"], answer: "I'm Art \u2014 inside Atelier, I help you find your way around the app and understand how a screen works, right when you need it." }
+  ];
+  var fallback = "Good question \u2014 I don't have a scripted answer for that one here, but you can get in touch at support@atelieros.co.za and we'll help directly, or just try Atelier for free and explore.";
+
+  var overlay = document.getElementById("artChatOverlay");
+  var openBtn = document.getElementById("artTriggerBtn");
+  var closeBtn = document.getElementById("artChatClose");
+  var form = document.getElementById("artChatForm");
+  var input = document.getElementById("artChatInput");
+  var messages = document.getElementById("artChatMessages");
+
+  function addMessage(text, who) {
+    var row = document.createElement("div");
+    row.className = "art-chat-row " + who;
+    var bubble = document.createElement("div");
+    bubble.className = "art-chat-bubble " + who;
+    bubble.textContent = text;
+    row.appendChild(bubble);
+    messages.appendChild(row);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function respondTo(question) {
+    var q = question.toLowerCase();
+    for (var i = 0; i < topics.length; i++) {
+      for (var j = 0; j < topics[i].keywords.length; j++) {
+        if (q.indexOf(topics[i].keywords[j]) !== -1) {
+          return topics[i].answer;
+        }
+      }
+    }
+    return fallback;
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener("click", function () {
+      overlay.classList.add("open");
+      input.focus();
+    });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      overlay.classList.remove("open");
+    });
+  }
+  if (overlay) {
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.classList.remove("open");
+    });
+  }
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text) return;
+      addMessage(text, "user");
+      input.value = "";
+      setTimeout(function () {
+        addMessage(respondTo(text), "art");
+      }, 400);
+    });
+  }
+})();
+</script>
 </body>
 </html>
