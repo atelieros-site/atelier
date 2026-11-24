@@ -257,7 +257,7 @@ footer a:hover { color: var(--accent); }
 .plugin-icon {
   width: 52px;
   height: 52px;
-  background: var(--ink);
+  background: var(--accent);
   border-radius: 12px;
   display: flex;
   align-items: center;
