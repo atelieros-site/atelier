@@ -127,8 +127,78 @@
         <a class="ghost-cta" href="/pricing/">See pricing</a>
       </div>
     </div>
-    <img class="hero-image" src="/images/hero/hero-team.png" alt="A construction worker, business owner, mechanic and doctor representing the range of South African trades and businesses Atelier serves" />
+    <div class="hero-phone" role="img" aria-label="Phone screen showing an Atelier invoice moving from draft to sent to paid">
+      <div class="phone-device">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-screen-label">Invoices</div>
+          <div class="invoice-card">
+            <div class="invoice-card-top">
+              <span class="invoice-number">INV-1042</span>
+              <span class="invoice-badge" id="heroInvoiceBadge">Draft</span>
+            </div>
+            <div class="invoice-customer">Forge Vertical</div>
+            <div class="invoice-items">
+              <div class="invoice-items-head">
+                <span>Description</span><span>Qty</span><span>Total</span>
+              </div>
+              <div class="invoice-item">
+                <span>Website design package</span><span>1</span><span>R 2,500</span>
+              </div>
+              <div class="invoice-item">
+                <span>Logo &amp; brand kit</span><span>1</span><span>R 1,200</span>
+              </div>
+              <div class="invoice-item">
+                <span>Hosting setup (annual)</span><span>1</span><span>R 800</span>
+              </div>
+            </div>
+            <div class="invoice-subtotal">
+              <span>Subtotal</span><span>R 4,500</span>
+            </div>
+            <div class="invoice-total">
+              <span>Total due</span>
+              <span class="invoice-amount" id="heroInvoiceAmount">R 4,500</span>
+            </div>
+          </div>
+          <button class="invoice-cta" id="heroInvoiceBtn" type="button" tabindex="-1">Send invoice</button>
+        </div>
+      </div>
+    </div>
   </section>
+
+<script>
+(function () {
+  var badge = document.getElementById("heroInvoiceBadge");
+  var btn = document.getElementById("heroInvoiceBtn");
+  var amount = document.getElementById("heroInvoiceAmount");
+  if (!badge || !btn || !amount) return;
+
+  var steps = [
+    { badge: "Draft", cls: "", btnText: "Send invoice", btnOn: true, pop: false },
+    { badge: "Sending…", cls: "is-sending", btnText: "Sending…", btnOn: false, pop: false },
+    { badge: "Sent", cls: "is-sent", btnText: "Sent", btnOn: false, pop: false },
+    { badge: "Paid", cls: "is-paid", btnText: "Paid in full", btnOn: false, pop: true }
+  ];
+  var i = 0;
+
+  function render(step) {
+    badge.textContent = step.badge;
+    badge.className = "invoice-badge" + (step.cls ? " " + step.cls : "");
+    btn.textContent = step.btnText;
+    btn.style.opacity = step.btnOn ? "1" : "0.55";
+    if (step.pop) {
+      amount.classList.add("is-paid");
+      setTimeout(function () { amount.classList.remove("is-paid"); }, 350);
+    }
+  }
+
+  render(steps[0]);
+  setInterval(function () {
+    i = (i + 1) % steps.length;
+    render(steps[i]);
+  }, 1600);
+})();
+</script>
 
   <section class="difference">
     <h2>Every business is different. There's room for all of them at Atelier.</h2>

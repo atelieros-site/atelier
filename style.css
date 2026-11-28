@@ -238,6 +238,116 @@ footer a:hover { color: var(--accent); }
   display: block;
 }
 
+/* Hero phone mockup — animated invoice demo */
+.hero-phone { display: flex; justify-content: center; }
+.phone-device {
+  width: 260px;
+  background: var(--ink);
+  border-radius: 36px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 18px;
+  background: var(--ink);
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
+}
+.phone-screen {
+  background: var(--bg);
+  border-radius: 26px;
+  padding: 36px 14px 14px;
+  min-height: 420px;
+}
+.phone-screen-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 0.7rem;
+}
+.invoice-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem;
+}
+.invoice-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.invoice-number { font-size: 0.75rem; color: var(--muted); }
+.invoice-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--muted);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.invoice-badge.is-sending { background: #faeeda; color: #854f0b; }
+.invoice-badge.is-sent { background: #e6f1fb; color: #0c447c; }
+.invoice-badge.is-paid { background: var(--accent-soft); color: var(--accent-dark); }
+.invoice-customer { font-size: 0.78rem; color: var(--ink); margin-bottom: 0.6rem; }
+.invoice-items {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+.invoice-items-head, .invoice-item { display: flex; font-size: 0.68rem; }
+.invoice-items-head {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+.invoice-item { color: var(--ink); margin-bottom: 0.3rem; }
+.invoice-items-head span:first-child, .invoice-item span:first-child { flex: 1; padding-right: 0.3rem; }
+.invoice-items-head span:nth-child(2), .invoice-item span:nth-child(2) { width: 22px; text-align: center; color: var(--muted); }
+.invoice-items-head span:last-child, .invoice-item span:last-child { width: 48px; text-align: right; }
+.invoice-subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+.invoice-total { display: flex; justify-content: space-between; align-items: center; margin-top: 0.3rem; }
+.invoice-total span:first-child { font-size: 0.72rem; font-weight: 600; color: var(--muted); }
+.invoice-amount {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  transition: transform 0.35s cubic-bezier(.34,1.56,.64,1);
+}
+.invoice-amount.is-paid { transform: scale(1.18); }
+.invoice-cta {
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+@media (max-width: 860px) {
+  .phone-device { width: 220px; }
+}
+
 :root { --yellow: #facc15; }
 
 .card, .plugin-card {
